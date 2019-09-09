@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .header {
+            position: relative;
+            background-color: skyblue;
+            text-align: center;
+            padding-top: 150px;
+            height: 200px;
+            box-sizing: border-box;
+            font-size: 48px;
+            width: 100%;
+            z-index: 100;
+            margin-bottom: -200px;
+        }
+
+        .header.sticky {
+            position: fixed;
+            top: -100px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+        }
+
+        .content {
+            padding: 32px;
+            padding-top: 200px;
+            font-size: 96px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Header</div>
+    <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</body>
+
+<script>
+    THRESHOLD = 100;
+
+    function handleScroll(event) {
+        let s = event.target.scrollingElement;
+        let scrollTop = s.scrollTop;
+
+        const header = document.querySelector('.header');
+        if (scrollTop > THRESHOLD) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+</script>
+</html>
