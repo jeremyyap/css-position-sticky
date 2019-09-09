@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            font-size: 36px;
+        }
+
+        .list {
+            display: inline-block;
+            width: 300px;
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid black;
+        }
+
+        /* .list-group:nth-child(odd) { border: 5px solid navy; }
+        .list-group:nth-child(even) { border: 5px solid teal; } */
+
+        .sub-header, .item {
+            padding: 8px;
+        }
+
+        .sub-header {
+            position: sticky;
+            top: 0;
+            /* bottom: 0; */
+            background-color: navy;
+            color: white;
+        }
+        .list-group:nth-of-type(odd) .sub-header, .sub-header.odd { background-color: teal; }
+
+        .header-shadow {
+            position: sticky;
+            top: 47px;
+            height: 10px;
+            margin-bottom: -10px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+        }
+
+        .item {
+            border-bottom: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <div class="list-group">
+            <div class="header-shadow"></div>
+            <div class="sub-header">A</div>
+            <div class="item">Apple</div>
+            <div class="item">Apricot</div>
+            <div class="item">Avocado</div>
+        </div>
+        <div class="list-group">
+            <div class="header-shadow"></div>
+            <div class="sub-header">B</div>
+            <div class="item">Banana</div>
+            <div class="item">Blackberry</div>
+            <div class="item">Blueberry</div>
+            <div class="item">Blackcurrant</div>
+            <div class="item">Boysenberry</div>
+        </div>
+        <div class="list-group">
+            <div class="header-shadow"></div>
+            <div class="sub-header">C</div>
+            <div class="item">Cherry</div>
+            <div class="item">Coconut</div>
+            <div class="item">Cranberry</div>
+            <div class="item">Cucumber</div>
+        </div>
+        <div class="list-group">
+            <div class="header-shadow"></div>
+            <div class="sub-header">D</div>
+            <div class="item">Dragonfruit</div>
+            <div class="item">Durian</div>
+        </div>
+    </div>
+</body>
+</html>
